@@ -1,0 +1,55 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 24
+    buildToolsVersion "24.0.1"
+
+    defaultConfig {
+        applicationId "android.tumb.com.tumb"
+        minSdkVersion 21
+        targetSdkVersion 24
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    testCompile 'junit:junit:4.12'
+
+    //Jumblr
+    compile 'com.tumblr:jumblr:0.0.11'
+
+    //Loglr
+    compile 'com.daksh:loglr:1.1.1'
+
+    // RX
+    compile 'io.reactivex:rxjava:1.1.1'
+    compile 'com.f2prateek.rx.preferences:rx-preferences:1.0.1'
+    compile 'io.reactivex:rxandroid:1.0.1'
+    
+    // Retrofit
+    compile 'com.squareup.retrofit:retrofit:1.9.0'
+
+    compile 'com.android.support:appcompat-v7:24.2.0'
+    compile 'com.android.support:design:24.2.0'
+    compile 'com.android.support:support-v4:24.2.0'
+
+
+    //Glide
+    compile 'com.github.bumptech.glide:glide:3.7.0'
+
+
+    // jsoup HTML parser library @ http://jsoup.org/
+    compile 'org.jsoup:jsoup:1.9.2'
+
+    //Onboarding for login
+    compile 'com.github.chyrta:AndroidOnboarder:0.6'
+
+}

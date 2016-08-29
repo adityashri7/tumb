@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary">
+
+    <TextView
+        android:id="@+id/account_texview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ACCOUNT"
+        android:layout_margin="20dp"
+        android:textStyle="bold"
+        android:textColor="@android:color/white"/>
+
+
+
+    <RelativeLayout
+        android:id="@+id/like_container"
+        android:layout_below="@id/account_texview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/like_icon"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="20dp"
+            android:tint="@android:color/white"
+            android:src="@drawable/ic_heart"
+            android:layout_alignParentLeft="true"/>
+        <TextView
+            android:id="@+id/user_likes_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@+id/like_icon"
+            android:layout_toLeftOf="@+id/user_like_count"
+            android:textColor="@android:color/white"
+            android:text="Likes"/>
+        <TextView
+            android:id="@+id/user_like_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/white"
+            android:text="-"
+            android:layout_marginRight="20dp"
+            android:layout_alignParentRight="true"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_below="@id/like_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp">
+        <ImageView
+            android:id="@+id/follow_icon"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="20dp"
+            android:tint="@android:color/white"
+            android:src="@drawable/ic_star"
+            android:layout_alignParentLeft="true"/>
+        <TextView
+            android:id="@+id/user_follow_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@+id/follow_icon"
+            android:layout_toLeftOf="@+id/user_follow_count"
+            android:textColor="@android:color/white"
+            android:text="Following"/>
+        <TextView
+            android:id="@+id/user_follow_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/white"
+            android:text="-"
+            android:layout_marginRight="20dp"
+            android:layout_alignParentRight="true"/>
+
+    </RelativeLayout>
+
+
+    <TextView
+        android:id="@+id/logout_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Logout"
+        android:layout_margin="20dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:textStyle="bold"
+        android:textColor="@android:color/white"/>
+
+
+</RelativeLayout>

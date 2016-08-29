@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">Tumb</string>
+
+    <string name="consumer_key">SLYa0EexZ5lhPjBJaoP73nLPfwf4MnNJO79ZaXC0T2L81MHHzV</string>
+    <string name="consumer_secret">Umf9wTN9tz5ISq1sNztSMbbqaboZmeL2ezrBbjCAC6nbbDs4Gs</string>
+
+    <string name="title_activity_splash">SplashActivity</string>
+    <string name="title_activity_main">MainActivity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="no_connection_message">Lost internet connection. Using cached feed.</string>
+    <string name="got_connection_message">Got internet connection.</string>
+
+    <string name="login_screen_1_title">Welcome to Tumb</string>
+    <string name="login_screen_1_text">A Tumblr client to view your personal dashboard. You can see the posts
+        from Blogs you are already following.
+    </string>
+    <string name="login_screen_2_title">Offline Functionality</string>
+    <string name="login_screen_2_text">Includes pagination and offline capabilities</string>
+    <string name="login_screen_3_title">RxJava</string>
+    <string name="login_screen_3_text">Uses the power of RXJava to commit to asynchronous event driven methods</string>
+</resources>
