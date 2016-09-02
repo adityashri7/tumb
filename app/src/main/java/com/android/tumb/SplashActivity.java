@@ -1,10 +1,10 @@
-package android.tumb.com.tumb;
+package com.android.tumb;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.tumb.com.tumb.Login.LoginActivity;
-import android.tumb.com.tumb.Main.MainActivity;
+import com.android.tumb.Login.LoginActivity;
+import com.android.tumb.Main.MainActivity;
 
 public class SplashActivity extends AppCompatActivity {
 

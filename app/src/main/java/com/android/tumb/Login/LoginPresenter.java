@@ -1,18 +1,11 @@
-package android.tumb.com.tumb.Login;
+package com.android.tumb.Login;
 
 import android.content.Context;
-import android.content.Intent;
-import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
-
-import android.os.Bundle;
-import android.tumb.com.tumb.Main.MainActivity;
-import android.tumb.com.tumb.R;
-import android.view.View;
 import android.widget.Toast;
 
-import com.chyrta.onboarder.OnboarderActivity;
+import com.android.tumb.R;
 import com.chyrta.onboarder.OnboarderPage;
 import com.tumblr.loglr.Interfaces.LoginListener;
 import com.tumblr.loglr.LoginResult;
@@ -22,29 +15,21 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * A login screen that offers login via Tumblr
+ * Created by trust on 9/1/2016.
  */
-public class LoginActivity extends OnboarderActivity {
+public class LoginPresenter {
 
-    // UI references.
-    private View mProgressView;
-
-    String consumerKey;
-    String consumerSecret;
+    private List<OnboarderPage> onboarderPages;
+    private LoginViewInterface listener;
     private Loglr loglr;
     private Context context;
-    private List<OnboarderPage> onboarderPages;
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
 
-        consumerKey = getString(R.string.consumer_key);
-        consumerSecret = getString(R.string.consumer_secret);
-
-        context = this;
-
-
+    public LoginPresenter(LoginViewInterface viewInterface, Context context) {
+        listener = viewInterface;
+        this.context = context;
         loglr = Loglr.getInstance();
+        String consumerKey = context.getString(R.string.consumer_key);
+        String consumerSecret = context.getString(R.string.consumer_secret);
         loglr.setConsumerKey(consumerKey);
         loglr.setConsumerSecretKey(consumerSecret)
                 .setLoginListener(new LoginListener() {
@@ -52,18 +37,20 @@ public class LoginActivity extends OnboarderActivity {
                     public void onLoginSuccessful(LoginResult loginResult) {
                         String strOAuthToken = loginResult.getOAuthToken();
                         String strOAuthTokenSecret = loginResult.getOAuthTokenSecret();
-                        setUser(strOAuthToken, strOAuthTokenSecret);
+                        listener.login(strOAuthToken, strOAuthTokenSecret);
                     }
                 })
                 .setUrlCallBack("https://github.com/adityashri7/tumb/callback.php");
+    }
 
 
+    public void initializeOnboarders(){
         onboarderPages = new ArrayList<OnboarderPage>();
 
 
-        OnboarderPage onboarderPage1 = new OnboarderPage(getString(R.string.login_screen_1_title), getString(R.string.login_screen_1_text), R.drawable.ic_tumblr);
-        OnboarderPage onboarderPage2 = new OnboarderPage(getString(R.string.login_screen_2_title), getString(R.string.login_screen_2_text), R.drawable.ic_offline);
-        OnboarderPage onboarderPage3 = new OnboarderPage(getString(R.string.login_screen_3_title), getString(R.string.login_screen_3_text), R.drawable.ic_rxjava);
+        OnboarderPage onboarderPage1 = new OnboarderPage(context.getString(R.string.login_screen_1_title), context.getString(R.string.login_screen_1_text), R.drawable.ic_tumblr);
+        OnboarderPage onboarderPage2 = new OnboarderPage(context.getString(R.string.login_screen_2_title), context.getString(R.string.login_screen_2_text), R.drawable.ic_offline);
+        OnboarderPage onboarderPage3 = new OnboarderPage(context.getString(R.string.login_screen_3_title), context.getString(R.string.login_screen_3_text), R.drawable.ic_rxjava);
 
 
         onboarderPage1.setTitleColor(R.color.white);
@@ -82,16 +69,11 @@ public class LoginActivity extends OnboarderActivity {
         onboarderPages.add(onboarderPage1);
         onboarderPages.add(onboarderPage2);
         onboarderPages.add(onboarderPage3);
-
-
-        setOnboardPagesReady(onboarderPages);
-        shouldDarkenButtonsLayout(true);
-        setFinishButtonTitle("LOGIN");
+        listener.setOnboarding(onboarderPages);
 
     }
 
-    @Override
-    public void onFinishButtonPressed() {
+    public void login() {
         ConnectivityManager cm = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
         final Boolean hasNetwork = activeNetwork != null && activeNetwork.isConnectedOrConnecting();
@@ -101,17 +83,5 @@ public class LoginActivity extends OnboarderActivity {
         else{
             Toast.makeText(context.getApplicationContext(), "Please check your network connection.", Toast.LENGTH_LONG).show();
         }
-
     }
-
-    private void setUser(String strOAuthToken, String strOAuthTokenSecret) {
-        SharedPreferences prefs = getSharedPreferences("keychain", MODE_PRIVATE);
-        prefs.edit().putString("OAuthToken", strOAuthToken).apply();
-        prefs.edit().putString("OAuthTokenSecret", strOAuthTokenSecret).apply();
-        Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent);
-        finish();
-    }
-
 }
-

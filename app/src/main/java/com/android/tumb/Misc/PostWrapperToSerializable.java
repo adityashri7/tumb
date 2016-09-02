@@ -1,7 +1,7 @@
-package android.tumb.com.tumb.Misc;
+package com.android.tumb.Misc;
 
-import android.tumb.com.tumb.Data.PostSerializable;
-import android.tumb.com.tumb.Data.PostWrapper;
+import com.android.tumb.Data.PostSerializable;
+import com.android.tumb.Data.PostWrapper;
 
 /**
  * Created by trust on 8/27/2016.

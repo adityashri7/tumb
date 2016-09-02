@@ -1,17 +1,17 @@
-package android.tumb.com.tumb.Main.Account;
+package com.android.tumb.Main.Account;
 
 import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.tumb.com.tumb.Data.API.AccountApiService;
-import android.tumb.com.tumb.R;
+import com.android.tumb.Data.API.AccountApiService;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.android.tumb.R;
 import com.tumblr.jumblr.types.User;
 
 public class AccountFragment extends Fragment implements AccountApiService.UserResponse {

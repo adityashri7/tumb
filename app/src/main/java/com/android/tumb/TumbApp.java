@@ -1,4 +1,4 @@
-package android.tumb.com.tumb;
+package com.android.tumb;
 
 import android.app.Application;
 import android.content.Context;

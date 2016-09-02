@@ -1,4 +1,4 @@
-package android.tumb.com.tumb.Data;
+package com.android.tumb.Data;
 
 import java.io.Serializable;
 

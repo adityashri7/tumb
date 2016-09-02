@@ -1,8 +1,8 @@
-package android.tumb.com.tumb.Misc;
+package com.android.tumb.Misc;
 
 import android.content.Context;
-import android.tumb.com.tumb.Data.PostSerializable;
-import android.tumb.com.tumb.Data.PostWrapper;
+import com.android.tumb.Data.PostSerializable;
+import com.android.tumb.Data.PostWrapper;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;

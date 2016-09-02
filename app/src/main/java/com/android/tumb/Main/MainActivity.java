@@ -1,4 +1,4 @@
-package android.tumb.com.tumb.Main;
+package com.android.tumb.Main;
 
 import android.content.Intent;
 import android.content.IntentFilter;
@@ -9,14 +9,15 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.tumb.com.tumb.Data.API.AccountApiService;
-import android.tumb.com.tumb.Data.API.DashboardService;
-import android.tumb.com.tumb.Login.LoginActivity;
-import android.tumb.com.tumb.Main.Account.AccountFragment;
-import android.tumb.com.tumb.Main.Feed.FeedFragment;
-import android.tumb.com.tumb.Misc.InternetReceiver;
-import android.tumb.com.tumb.R;
-import android.tumb.com.tumb.TumbApp;
+import com.android.tumb.Data.API.AccountApiService;
+import com.android.tumb.Data.API.DashboardService;
+import com.android.tumb.Login.LoginActivity;
+import com.android.tumb.Main.Account.AccountFragment;
+import com.android.tumb.Main.Feed.FeedFragment;
+import com.android.tumb.Misc.InternetReceiver;
+import com.android.tumb.R;
+import com.android.tumb.TumbApp;
+
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;

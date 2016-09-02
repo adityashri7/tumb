@@ -1,10 +1,10 @@
-package android.tumb.com.tumb.Misc;
+package com.android.tumb.Misc;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.net.ConnectivityManager;
-import android.tumb.com.tumb.Main.MainActivity;
+import com.android.tumb.Main.MainActivity;
 
 /**
  * Created by trust on 8/28/2016.

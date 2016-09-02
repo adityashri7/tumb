@@ -1,6 +1,5 @@
-package android.tumb.com.tumb.Data;
+package com.android.tumb.Data;
 
-import android.content.Context;
 import android.util.Xml;
 
 import com.tumblr.jumblr.types.PhotoPost;
@@ -37,7 +36,7 @@ public class PostWrapper implements Serializable {
     private String type;
     private String caption;
 
-    public PostWrapper(Post post, Context context){
+    public PostWrapper(Post post){
         this.post = post;
         setBlogName();
         setNotes();

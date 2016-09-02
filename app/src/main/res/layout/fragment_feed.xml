@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context="android.tumb.com.tumb.Main.Feed.FeedFragment">
+    tools:context=".Main.Feed.FeedFragment">
 
     <android.support.v4.widget.SwipeRefreshLayout
         android:id="@+id/question_recycler_view_container"

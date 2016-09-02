@@ -1,14 +1,9 @@
-package android.tumb.com.tumb.Data.API;
+package com.android.tumb.Data.API;
 
 import android.os.AsyncTask;
 
 import com.tumblr.jumblr.JumblrClient;
-import com.tumblr.jumblr.types.Post;
 import com.tumblr.jumblr.types.User;
-
-import java.util.List;
-
-import rx.subjects.SerializedSubject;
 
 /**
  * Created by trust on 8/27/2016.

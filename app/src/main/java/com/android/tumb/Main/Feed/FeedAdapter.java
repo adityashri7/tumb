@@ -1,4 +1,4 @@
-package android.tumb.com.tumb.Main.Feed;
+package com.android.tumb.Main.Feed;
 
 /**
  * Created by trust on 8/27/2016.
@@ -7,10 +7,9 @@ package android.tumb.com.tumb.Main.Feed;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
-import android.tumb.com.tumb.Data.PostSerializable;
-import android.tumb.com.tumb.Data.PostWrapper;
-import android.tumb.com.tumb.Misc.PostWrapperToSerializable;
-import android.tumb.com.tumb.R;
+import com.android.tumb.Data.PostSerializable;
+import com.android.tumb.Data.PostWrapper;
+import com.android.tumb.Misc.PostWrapperToSerializable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,6 +17,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 
+import com.android.tumb.R;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 
